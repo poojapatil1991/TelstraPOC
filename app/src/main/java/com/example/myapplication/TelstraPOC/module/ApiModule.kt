@@ -1,6 +1,6 @@
-package com.example.myapplication.TelstraPOC.Module
+package com.example.myapplication.TelstraPOC.module
 
-import com.example.myapplication.TelstraPOC.Commen.IApiInterface
+import com.example.myapplication.TelstraPOC.utils.ApiInterface
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -53,8 +53,8 @@ class ApiModule {
     }
 
     // Function returns the instance of retrofit
-    fun provideAllApi(): IApiInterface? {
-        return provideApiRetrofit()!!.create(IApiInterface::class.java)
+    fun provideAllApi(): ApiInterface? {
+        return provideApiRetrofit()!!.create(ApiInterface::class.java)
     }
 
 }

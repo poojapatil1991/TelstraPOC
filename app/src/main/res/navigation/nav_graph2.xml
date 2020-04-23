@@ -7,10 +7,9 @@
 
     <fragment
         android:id="@+id/First2Fragment"
-        android:name="com.example.myapplication.TelstraPOC.ImageList.View.First2Fragment"
+        android:name="com.example.myapplication.TelstraPOC.countryFeatures.View.CountryFeatureFragment"
         android:label="@string/first_fragment_label"
-        tools:layout="@layout/fragment_first2">
-
+        tools:layout="@layout/fragment_country_feature">
 
     </fragment>
 

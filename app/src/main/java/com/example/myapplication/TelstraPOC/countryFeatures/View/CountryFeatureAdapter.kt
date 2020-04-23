@@ -1,4 +1,4 @@
-package com.example.myapplication.TelstraPOC.ImageList.View
+package com.example.myapplication.TelstraPOC.countryFeatures.View
 
 import android.view.LayoutInflater
 import android.view.View
@@ -7,13 +7,13 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.R
-import com.example.myapplication.TelstraPOC.Commen.AppContext
-import com.example.myapplication.TelstraPOC.Commen.GlideImageDownloader
-import com.example.myapplication.TelstraPOC.ImageList.Model.ImageDetails
+import com.example.myapplication.TelstraPOC.utils.CountryFeatureApplication
+import com.example.myapplication.TelstraPOC.utils.GlideImageDownloader
+import com.example.myapplication.TelstraPOC.countryFeatures.Model.CountryFeature
 /*
 Adapter to show the list of images from server
  */
-class ImageListAdapter (val mGenenralInfoList : ArrayList<ImageDetails>) : RecyclerView.Adapter<ImageListAdapter.ViewHolder>() {
+class CountryFeatureAdapter (val mCountryFeatureList : ArrayList<CountryFeature>) : RecyclerView.Adapter<CountryFeatureAdapter.ViewHolder>() {
 
     // glideImageDownloader to download images from server
     lateinit var glideImageDownloader: GlideImageDownloader
@@ -24,16 +24,16 @@ class ImageListAdapter (val mGenenralInfoList : ArrayList<ImageDetails>) : Recyc
 
     override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
         glideImageDownloader = GlideImageDownloader()
-        val mGeneralInfoObj: ImageDetails = mGenenralInfoList[position]
+        val mGeneralInfoObj: CountryFeature = mCountryFeatureList[position]
         viewHolder.mTvTitle?.text = mGeneralInfoObj.title
         viewHolder.mTvDescription?.text = mGeneralInfoObj.description
-        glideImageDownloader.downloadImage(AppContext.context,mGeneralInfoObj.imageHref,viewHolder.mIvPhoto)
+        glideImageDownloader.downloadImage(CountryFeatureApplication.context,mGeneralInfoObj.imageHref,viewHolder.mIvPhoto)
 
     }
 
     // Gets the number of animals in the list
     override fun getItemCount(): Int {
-        return mGenenralInfoList.size
+        return mCountryFeatureList.size
     }
     // View holder representing single row in list
     class ViewHolder (view: View) : RecyclerView.ViewHolder(view) {

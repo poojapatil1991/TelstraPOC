@@ -1,4 +1,4 @@
-package com.example.myapplication.TelstraPOC.Commen
+package com.example.myapplication.TelstraPOC.utils
 
 import android.content.Context
 import android.widget.ImageView
@@ -13,7 +13,7 @@ Glide library is used to download image from server.
 class GlideImageDownloader {
     fun downloadImage(c: Context, url: String?, img: ImageView) {
         // Progress bar to show till image gets download
-        val circularProgressDrawable = CircularProgressDrawable(AppContext.context)
+        val circularProgressDrawable = CircularProgressDrawable(CountryFeatureApplication.context)
         circularProgressDrawable.strokeWidth = 5f
         circularProgressDrawable.centerRadius = 20f
         circularProgressDrawable.start()

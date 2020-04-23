@@ -1,19 +1,19 @@
-package com.example.myapplication.TelstraPOC.ImageList.View
+package com.example.myapplication.TelstraPOC.countryFeatures.View
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.myapplication.R
 
-import kotlinx.android.synthetic.main.activity_image_list.*
+import kotlinx.android.synthetic.main.activity_country_feature.*
 /*
 Launcher activity
 It contains First2Fragment
  */
-class ImageListActivity : AppCompatActivity() {
+class CountryFeatureActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_image_list)
+        setContentView(R.layout.activity_country_feature)
         setSupportActionBar(toolbar)
     }
     fun setToolbarTitle(title:String){

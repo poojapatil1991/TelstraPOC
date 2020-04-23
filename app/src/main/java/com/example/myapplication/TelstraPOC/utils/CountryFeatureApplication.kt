@@ -1,11 +1,11 @@
-package com.example.myapplication.TelstraPOC.Commen
+package com.example.myapplication.TelstraPOC.utils
 
 import android.app.Application
 import android.content.Context
 /*
 This class gives the context of whole application
  */
-class AppContext : Application() {
+class CountryFeatureApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()

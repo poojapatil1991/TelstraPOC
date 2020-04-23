@@ -1,18 +1,18 @@
-package com.example.myapplication.TelstraPOC.Commen
+package com.example.myapplication.TelstraPOC.utils
 
-import com.example.myapplication.TelstraPOC.Executer.ExecuterThread
-import com.example.myapplication.TelstraPOC.Executer.PostExecuterThread
+import com.example.myapplication.TelstraPOC.executer.ExecuterThread
+import com.example.myapplication.TelstraPOC.executer.UIThread
 import rx.Observable
 import rx.Subscriber
 import rx.Subscription
 import rx.subscriptions.Subscriptions
 /*
 Base usecase to interact between Presenter an view
-uses two seperate threads for backround work and main thread work
+uses two separate threads for background work and main thread work
  */
-abstract class UseCase <T>( executorThread : ExecuterThread, postExecutionThread : PostExecuterThread) : Interactor<T> {
+abstract class UseCase <T>( executorThread : ExecuterThread, postExecutionThread : UIThread) : BaseInteractor<T> {
     private var  executorThread : ExecuterThread? = null
-    private var  postExecutionThread : PostExecuterThread? = null
+    private var  postExecutionThread : UIThread? = null
     private var subscription : Subscription? = Subscriptions.empty()
 
     init  {
@@ -26,7 +26,7 @@ abstract class UseCase <T>( executorThread : ExecuterThread, postExecutionThread
     abstract fun createObservable() : Observable<T>;
     /*
     API call
-    subscribe on executorThread(backround) thread
+    subscribe on executorThread(background) thread
     observes on postExecutionThread (main) thread
      */
     override fun execute( subscriber : Subscriber<T>) {
@@ -34,10 +34,6 @@ abstract class UseCase <T>( executorThread : ExecuterThread, postExecutionThread
             .subscribeOn(executorThread!!.getScheduler())
             .observeOn(postExecutionThread!!.getScheduler())
             .subscribe(subscriber);
-    }
-
-    override fun execute():Observable<T> {
-        return createObservable();
     }
 
     /**
