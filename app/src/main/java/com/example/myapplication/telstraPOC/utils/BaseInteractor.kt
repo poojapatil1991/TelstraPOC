@@ -1,6 +1,5 @@
-package com.example.myapplication.TelstraPOC.utils
+package com.example.myapplication.telstraPOC.utils
 
-import rx.Observable
 import rx.Subscriber
 /*
 This is base Interacter to interact between View and Presenter

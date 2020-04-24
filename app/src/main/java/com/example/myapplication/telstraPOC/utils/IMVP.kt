@@ -1,8 +1,8 @@
-package com.example.myapplication.TelstraPOC.utils
+package com.example.myapplication.telstraPOC.utils
 /*
 MVP architecture
  */
-interface MVP {
+interface IMVP {
     interface Model
 
     interface View

@@ -1,4 +1,4 @@
-package com.example.myapplication.TelstraPOC.countryFeatures.Model
+package com.example.myapplication.telstraPOC.countryFeatures.model
 /*
 Model for image details
 describes the row from API response

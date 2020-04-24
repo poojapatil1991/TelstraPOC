@@ -1,15 +1,15 @@
-package com.example.myapplication.TelstraPOC.countryFeatures.Presenter
+package com.example.myapplication.telstraPOC.countryFeatures.presenter
 
-import com.example.myapplication.TelstraPOC.utils.BasePresenter
-import com.example.myapplication.TelstraPOC.countryFeatures.CountryFeatureMVP
-import com.example.myapplication.TelstraPOC.countryFeatures.CountryFeatureUseCase
-import com.example.myapplication.TelstraPOC.countryFeatures.Model.ResponseModel
+import com.example.myapplication.telstraPOC.utils.BasePresenter
+import com.example.myapplication.telstraPOC.countryFeatures.ICountryFeatureIMVP
+import com.example.myapplication.telstraPOC.countryFeatures.CountryFeatureUseCase
+import com.example.myapplication.telstraPOC.countryFeatures.model.ResponseModel
 import rx.Subscriber
 /*
 Presenter to communicate between ImageListActivity and ResponseModel
 uses imageListUseCase to download data from API
  */
-class CountryFeaturePresenter (val countryFeatureUseCase: CountryFeatureUseCase): BasePresenter<CountryFeatureMVP.View>() , CountryFeatureMVP.Presenter{
+class CountryFeaturePresenter (val countryFeatureUseCase: CountryFeatureUseCase): BasePresenter<ICountryFeatureIMVP.View>() , ICountryFeatureIMVP.Presenter{
 
     override fun onStart() {}
     override fun onStop() {}

@@ -1,4 +1,4 @@
-package com.example.myapplication.TelstraPOC.countryFeatures.View
+package com.example.myapplication.telstraPOC.countryFeatures.view
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

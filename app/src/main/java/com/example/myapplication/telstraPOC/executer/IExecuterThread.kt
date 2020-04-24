@@ -1,9 +1,9 @@
-package com.example.myapplication.TelstraPOC.executer
+package com.example.myapplication.telstraPOC.executer
 
 import rx.Scheduler
 /*
 Base thread for execution
  */
-interface ExecuterThread {
+interface IExecuterThread {
     fun getScheduler(): Scheduler?
 }

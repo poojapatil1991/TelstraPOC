@@ -1,6 +1,6 @@
-package com.example.myapplication.TelstraPOC.countryFeatures.Model
+package com.example.myapplication.telstraPOC.countryFeatures.model
 
-import com.example.myapplication.TelstraPOC.utils.ApiInterface
+import com.example.myapplication.telstraPOC.utils.ApiInterface
 /*
 Model to call the API
  */

@@ -6,7 +6,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:name=".TelstraPOC.utils.CountryFeatureApplication"
+        android:name=".telstraPOC.utils.CountryFeatureApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -14,7 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".TelstraPOC.countryFeatures.View.CountryFeatureActivity"
+            android:name=".telstraPOC.countryFeatures.view.CountryFeatureActivity"
             android:label="@string/title_activity_image_list"
             android:theme="@style/AppTheme.NoActionBar">
 

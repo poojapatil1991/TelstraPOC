@@ -1,6 +1,6 @@
-package com.example.myapplication.TelstraPOC.utils
+package com.example.myapplication.telstraPOC.utils
 
-import com.example.myapplication.TelstraPOC.countryFeatures.Model.ResponseModel
+import com.example.myapplication.telstraPOC.countryFeatures.model.ResponseModel
 import retrofit2.http.GET
 import rx.Observable
 /*

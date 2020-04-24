@@ -1,4 +1,4 @@
-package com.example.myapplication.TelstraPOC.countryFeatures.View
+package com.example.myapplication.telstraPOC.countryFeatures.view
 
 import android.annotation.SuppressLint
 import android.app.Activity
@@ -15,22 +15,22 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.example.myapplication.R
-import com.example.myapplication.TelstraPOC.utils.CountryFeatureApplication
-import com.example.myapplication.TelstraPOC.executer.ExecuterThread
-import com.example.myapplication.TelstraPOC.countryFeatures.CountryFeatureMVP
-import com.example.myapplication.TelstraPOC.countryFeatures.CountryFeatureUseCase
-import com.example.myapplication.TelstraPOC.countryFeatures.Model.CountryFeature
-import com.example.myapplication.TelstraPOC.countryFeatures.Model.CountryFeatureRequestModel
-import com.example.myapplication.TelstraPOC.countryFeatures.Model.ResponseModel
-import com.example.myapplication.TelstraPOC.countryFeatures.Presenter.CountryFeaturePresenter
-import com.example.myapplication.TelstraPOC.executer.UIThread
-import com.example.myapplication.TelstraPOC.module.ApiModule
-import com.example.myapplication.TelstraPOC.module.ThreadModule
+import com.example.myapplication.telstraPOC.utils.CountryFeatureApplication
+import com.example.myapplication.telstraPOC.executer.IExecuterThread
+import com.example.myapplication.telstraPOC.countryFeatures.ICountryFeatureIMVP
+import com.example.myapplication.telstraPOC.countryFeatures.CountryFeatureUseCase
+import com.example.myapplication.telstraPOC.countryFeatures.model.CountryFeature
+import com.example.myapplication.telstraPOC.countryFeatures.model.CountryFeatureRequestModel
+import com.example.myapplication.telstraPOC.countryFeatures.model.ResponseModel
+import com.example.myapplication.telstraPOC.countryFeatures.presenter.CountryFeaturePresenter
+import com.example.myapplication.telstraPOC.executer.UIThread
+import com.example.myapplication.telstraPOC.module.ApiModule
+import com.example.myapplication.telstraPOC.module.ThreadModule
 
 /**
  * A simple [Fragment] subclass as the default destination in the navigation.
  */
-class CountryFeatureFragment : Fragment(), CountryFeatureMVP.View, SwipeRefreshLayout.OnRefreshListener {
+class CountryFeatureFragment : Fragment(), ICountryFeatureIMVP.View, SwipeRefreshLayout.OnRefreshListener {
 
     lateinit var mDialog: Dialog
     lateinit var mContext: Activity
@@ -55,7 +55,7 @@ class CountryFeatureFragment : Fragment(), CountryFeatureMVP.View, SwipeRefreshL
         mDialog.setCanceledOnTouchOutside(false)
 
         val uiThread: UIThread = ThreadModule().providePostExecutionThread()
-        val executorThread: ExecuterThread = ThreadModule().provideExecutorThread()
+        val executorThread: IExecuterThread = ThreadModule().provideExecutorThread()
 
         val countryFeatureReqModel = CountryFeatureRequestModel()
         countryFeatureReqModel.setApi(ApiModule().provideAllApi())
@@ -92,7 +92,7 @@ class CountryFeatureFragment : Fragment(), CountryFeatureMVP.View, SwipeRefreshL
                 for (item in reaponseModel!!.rows){
                     var mTitle : String = "No Title"
                     var mDescription : String = "No Description"
-                    var mUrl : String = "No Url"
+                    var mUrl : String = ""
                     var isAllNull : Boolean = false
 
                     if(item.title.isNullOrBlank() && item.description.isNullOrBlank() && item.imageHref.isNullOrBlank()){

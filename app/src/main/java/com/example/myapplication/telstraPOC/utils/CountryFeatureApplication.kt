@@ -1,4 +1,4 @@
-package com.example.myapplication.TelstraPOC.utils
+package com.example.myapplication.telstraPOC.utils
 
 import android.app.Application
 import android.content.Context

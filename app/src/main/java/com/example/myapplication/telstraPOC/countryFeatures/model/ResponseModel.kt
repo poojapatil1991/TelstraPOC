@@ -1,4 +1,4 @@
-package com.example.myapplication.TelstraPOC.countryFeatures.Model
+package com.example.myapplication.telstraPOC.countryFeatures.model
 /*
 Model for API response
  */

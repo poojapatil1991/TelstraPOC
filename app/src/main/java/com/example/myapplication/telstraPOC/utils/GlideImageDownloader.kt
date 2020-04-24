@@ -1,4 +1,4 @@
-package com.example.myapplication.TelstraPOC.utils
+package com.example.myapplication.telstraPOC.utils
 
 import android.content.Context
 import android.widget.ImageView
@@ -18,7 +18,7 @@ class GlideImageDownloader {
         circularProgressDrawable.centerRadius = 20f
         circularProgressDrawable.start()
 
-        if (url != null && url.length > 0 &&  !url.equals("No Url") ) {
+        if (url != null && url.length > 0 &&  !url.equals("") ) {
             Glide.with(c).load(url).error(R.mipmap.ic_launcher).placeholder(circularProgressDrawable).into(img)
         } else {
             Glide.with(c).load(R.mipmap.ic_launcher).placeholder(circularProgressDrawable).into(img)

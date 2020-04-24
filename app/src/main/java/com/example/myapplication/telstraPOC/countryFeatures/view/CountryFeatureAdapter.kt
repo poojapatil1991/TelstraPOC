@@ -1,4 +1,4 @@
-package com.example.myapplication.TelstraPOC.countryFeatures.View
+package com.example.myapplication.telstraPOC.countryFeatures.view
 
 import android.view.LayoutInflater
 import android.view.View
@@ -7,9 +7,9 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.R
-import com.example.myapplication.TelstraPOC.utils.CountryFeatureApplication
-import com.example.myapplication.TelstraPOC.utils.GlideImageDownloader
-import com.example.myapplication.TelstraPOC.countryFeatures.Model.CountryFeature
+import com.example.myapplication.telstraPOC.utils.CountryFeatureApplication
+import com.example.myapplication.telstraPOC.utils.GlideImageDownloader
+import com.example.myapplication.telstraPOC.countryFeatures.model.CountryFeature
 /*
 Adapter to show the list of images from server
  */

@@ -1,6 +1,6 @@
-package com.example.myapplication.TelstraPOC.module
+package com.example.myapplication.telstraPOC.module
 
-import com.example.myapplication.TelstraPOC.utils.ApiInterface
+import com.example.myapplication.telstraPOC.utils.ApiInterface
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor

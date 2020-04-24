@@ -1,9 +1,9 @@
-package com.example.myapplication.TelstraPOC.utils
+package com.example.myapplication.telstraPOC.utils
 /*
 Its is the Base Presenter
 Its abstract class, default implementation of methods is defined here.
  */
-abstract class BasePresenter <V : MVP.View> : MVP.Presenter<V> {
+abstract class BasePresenter <V : IMVP.View> : IMVP.Presenter<V> {
 
     private  var mMvpView : V? = null
 
