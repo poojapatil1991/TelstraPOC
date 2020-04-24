@@ -57,13 +57,13 @@ class CountryFeatureFragment : Fragment(), CountryFeatureMVP.View, SwipeRefreshL
         val uiThread: UIThread = ThreadModule().providePostExecutionThread()
         val executorThread: ExecuterThread = ThreadModule().provideExecutorThread()
 
-        val imageListReqModel = CountryFeatureRequestModel()
-        imageListReqModel.setApi(ApiModule().provideAllApi())
+        val countryFeatureReqModel = CountryFeatureRequestModel()
+        countryFeatureReqModel.setApi(ApiModule().provideAllApi())
 
-        val imageListUsecase = CountryFeatureUseCase(executorThread,uiThread)
-        imageListUsecase.request = imageListReqModel
+        val countryFeatureUsecase = CountryFeatureUseCase(executorThread,uiThread)
+        countryFeatureUsecase.request = countryFeatureReqModel
 
-        mCountryFeaturePresenter = CountryFeaturePresenter(imageListUsecase)
+        mCountryFeaturePresenter = CountryFeaturePresenter(countryFeatureUsecase)
         mCountryFeaturePresenter.onAttachView(this)
 
         mCountryFeaturePresenter.loadCountryFeatureList()
